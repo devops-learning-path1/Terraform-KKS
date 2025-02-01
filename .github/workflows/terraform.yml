@@ -9,7 +9,7 @@ on:
       branch:
         description: 'Branch to run terraform on'
         required: true
-        default: 'main'
+        default: 'practice/dev-eks'
       action:
         description: 'Choose whether to run plan or apply'
         required: true
@@ -17,6 +17,7 @@ on:
         options:
           - plan
           - apply
+          - destroy
         default: 'plan'
 
 jobs:
