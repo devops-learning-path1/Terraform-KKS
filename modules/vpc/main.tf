@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "eksinternetgateway" {
 }
 resource "aws_route_table" "eksroute_table" {
     vpc_id = aws_vpc.eksvpc.id
-    route = {
+    route {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.eksinternetgateway.id
     }
