@@ -1,0 +1,47 @@
+# local terraform directories
+.terraform/
+.terraform.lock.hcl
+
+#terraform state files
+*.tfstate
+*.tfstate.*
+
+#exclude all ,tfvars files, which may contain sensitive credentials
+*.tfvars
+*.tfvars.json
+
+# ignore downloaded providers and modules
+.terraform/providers/
+.terraform/modules/
+
+.terraform.tfstate.backup
+
+# Local Terraform files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# .terraform directory
+.terraform/
+
+# Local .terraform.d directory (if used for provider plugins or module installations)
+.terraform.d/
+
+# Terraform plan files
+*.tfplan
+*.tfplan.*
+
+# Terraform lock files (If you're using Terraform >= 0.14 and later)
+.terraform.lock.hcl
+
+# Environment-specific files
+.terraformrc
+terraform.rc
+
+# IDE or editor-specific files (optional)
+# These depend on your IDE, but commonly you'd ignore:
+.idea/
+.vscode/
+*.swp
