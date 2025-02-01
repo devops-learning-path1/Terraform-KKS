@@ -44,9 +44,15 @@ jobs:
 
     - name: Terraform Plan (Run only if selected in dispatch)
       if: ${{ github.event.inputs.action == 'plan' }}
-      run: terraform plan -var="branch=${{ github.event.inputs.branch }}"
+      run: terraform plan 
 
     - name: Terraform Apply (Run only if selected in dispatch)
       if: ${{ github.event.inputs.action == 'apply' }}
-      run: terraform apply -auto-approve -var="branch=${{ github.event.inputs.branch }}"
+      run: |
+        terraform plan
+        terraform apply -auto-approve 
+
+    - name: Terraform destroy (Run only if selected in dispatch)
+      if: ${{ github.event.inputs.action == 'destroy' }}
+      run: terraform destroy -auto-approve   
 
